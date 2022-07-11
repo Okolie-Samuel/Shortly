@@ -17,39 +17,60 @@ function closeMenu() {
 }
 
 // fetch api;
-url = document.getElementById("url");
+let url = document.getElementById("url");
+let copySection = document.getElementById("copyText");
+let mainParagraph = document.getElementById("mainLink");
+let shortParagraph = document.getElementById("shortLink");
+let button = document.getElementById("copyLink");
 
-let submitForm = (e, form) => {
-  e.preventDefault();
-  fetch(`https://api.shrtco.de/v2/shorten?url=${url.value}`, {
-    method: "post",
-    body: JSON.stringify({
-      name: form.formInput.value,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) =>
-      //Success code goes here
-      console.log(data)
-    )
-    .catch(function (err) {
-      //Failure
-      alert("Error");
-    });
+let submitForm = async (e, form) => {
+  try {
+    e.preventDefault();
+    const myResponse = await fetch(
+      `https://api.shrtco.de/v2/shorten?url=${url.value}`,
+      {
+        method: "post",
+        body: JSON.stringify({
+          name: form.formInput.value,
+        }),
+      }
+    );
+    const data = await myResponse.json();
+    const link = data.result.short_link;
+    copySection.style.display = "flex";
+    mainParagraph.innerHTML = url.value;
+    shortParagraph.innerHTML = link;
+    // console.log(link);
+    // display();
+  } catch (error) {
+    //Failure
+    alert("Error");
+  }
 };
 
 // fetch("https://api.shrtco.de/v2/shorten")
 //   .then((response) => response.json())
 //   .then((data) => console.log(data));
 
-let copySection = document.getElementById("copyText");
-let mainParagraph = document.getElementById("mainLink");
-let shortParagraph = document.getElementById("shortLink");
-let button = document.getElementById("copyLink");
-let data = data.json();
+let copyButton = () => {
+  // button.value = true;
+  // // shortParagraph.select();
+  // // shortParagraph.setSelectionRange(0, 99999);
+  let range = document.createRange();
+  let selection = window.getSelection();
+  range.selectNodeContents(document.querySelector("#shortLink"));
 
-let display = () => {
-  copySection.style.display = "initial";
-  mainParagraph.innerHTML = url.value;
-  shortParagraph.innerHTML = data.result.short_link;
+  selection.removeAllRanges();
+  selection.addRange(range);
+
+  navigator.clipboard.writeText(shortParagraph.innerText).then(function () {
+    console.log("text copied");
+  });
+  button.style.backgroundColor = "purple";
+  button.innerHTML = "copied!";
+  window.setTimeout(function () {
+    url.value = "";
+    button.style.backgroundColor = "hsl(180, 66%, 49%)";
+    button.innerHTML = "copy";
+  }, 3000);
 };

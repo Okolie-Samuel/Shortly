@@ -173,11 +173,14 @@ input[type="submit"] {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   display: none;
 }
 
 #mainLink {
   color: var(--VeryDarkBlue);
+  width: 60%;
+  overflow: auto;
 }
 
 #copyText div {
@@ -420,6 +423,14 @@ footer img {
     width: 80%;
   }
 
+  #copyText {
+    flex-direction: column;
+    width: 80%;
+  }
+  #mainLink {
+    width: 100%;
+  }
+
   .statistics {
     padding: 20px 27px;
   }
@@ -507,4 +518,7 @@ footer img {
   footer img {
     margin-top: 30px;
   }
+  /* #copyText div {
+    flex-direction: column;
+  } */
 }
