@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <img src="images/logo.svg" alt="logo" />
+        <div class="separatedMenu">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Resources</a>
+            </li>
+          </ul>
+          <hr />
+          <div class="buttons">
+            <a href="#" class="nav-link login">Login</a>
+            <a href="#" class="nav-link signup">Sign Up</a>
+          </div>
+        </div>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="heroSection">
+      <div class="heroText">
+        <h1>More than just shorter links</h1>
+        <p>
+          Build your brand's recognition and get detailed insights on how your
+          links are performing
+        </p>
+        <a href="#">Get Started</a>
+      </div>
+      <div class="heroImg">
+        <img src="images/illustration-working.svg" alt="" />
+      </div>
+    </section>
+
+    <section class="shortener">
+      <form action="" method="post" onsubmit="submitForm(event, this)">
+        <input
+          type="url"
+          id="url"
+          name="formInput"
+          placeholder="Shorten a link here.."
+        />
+        <input type="submit" onclick="submitForm()" value="Shorten it!" />
+      </form>
+    </section>
+    <section id="copyText">
+      <p id="mainLink">test</p>
+      <div>
+        <p id="shortLink">test</p>
+        <button id="copyLink">copy</button>
+      </div>
+    </section>
+
+    <section class="statistics">
+      <div class="statisticsText">
+        <h1>Advanced Statistics</h1>
+        <p class="desktopStatistics">
+          Track how your links are performing accross the web with <br />
+          our advanced statistics dashboard.
+        </p>
+        <p class="mobileStatistics">
+          Track how your links are performing accross the web with our advanced
+          statistics dashboard.
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card1">
+          <img src="images/icon-brand-recognition.svg" alt="" />
+          <h2>Brand Recognition</h2>
+          <p>
+            Boost your brand recognition wiht each click. Generic links don't
+            mean a thing. Branded links help instill confidence in your content.
+          </p>
+        </div>
+        <div class="card2">
+          <img src="images/icon-detailed-records.svg" alt="" />
+          <h2>Detailed Records</h2>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and
+            where people enguage with your content helps inform better
+            deecisions.
+          </p>
+        </div>
+        <div class="card3">
+          <img src="images/icon-fully-customizable.svg" alt="" />
+          <h2>Fully Customizable</h2>
+          <p>
+            Improve brand awareness and content discoverability through
+            customizable links, superchanging audience engagement.
+          </p>
+        </div>
+      </div>
+      <div class="line"></div>
+      <span class="line1"></span>
+    </section>
+
+    <section class="boost">
+      <h1>Boost your links today</h1>
+      <a href="#">Get Started</a>
+    </section>
+
+    <footer>
+      <div class="footerLogo">
+        <h2>Shortly</h2>
+      </div>
+      <div class="footerFeatures">
+        <h3>Features</h3>
+        <ul>
+          <li>Link Shortening</li>
+          <li>Branded Links</li>
+          <li>Analytics</li>
+        </ul>
+      </div>
+      <div class="footerResources">
+        <h3>Resources</h3>
+        <ul>
+          <li>Blog</li>
+          <li>Developers</li>
+          <li>Support</li>
+        </ul>
+      </div>
+      <div class="footerCompany">
+        <h3>Company</h3>
+        <ul>
+          <li>About</li>
+          <li>Our Team</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="footerIcon">
+        <img src="images/icon-facebook.svg" alt="" />
+        <img src="images/icon-twitter.svg" alt="" />
+        <img src="images/icon-pinterest.svg" alt="" />
+        <img src="images/icon-instagram.svg" alt="" />
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
