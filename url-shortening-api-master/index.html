@@ -18,6 +18,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
   </head>
@@ -74,7 +81,12 @@
           name="formInput"
           placeholder="Shorten a link here.."
         />
-        <input type="submit" value="Shorten it!" />
+        <span id="spinner">
+          <i class="fa fa-spinner fa-spin" style="margin-right: 3px"></i>
+          <span class="load">Loading..</span>
+        </span>
+        <input id="shortenButton" type="submit" value="Shorten it!" />
+        <p id="error">Please add a link</p>
       </form>
     </section>
     <section id="copyText">

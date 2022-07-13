@@ -22,10 +22,15 @@ let copySection = document.getElementById("copyText");
 let mainParagraph = document.getElementById("mainLink");
 let shortParagraph = document.getElementById("shortLink");
 let button = document.getElementById("copyLink");
+let errorEmpty = document.getElementById("error");
+let spinner = document.getElementById("spinner");
+let shortenButton = document.getElementById("shortenButton");
 
 let submitForm = async (e, form) => {
   try {
     e.preventDefault();
+    spinner.style.display = "initial";
+    shortenButton.style.display = "none";
     const myResponse = await fetch(
       `https://api.shrtco.de/v2/shorten?url=${url.value}`,
       {
@@ -36,6 +41,8 @@ let submitForm = async (e, form) => {
       }
     );
     const data = await myResponse.json();
+    spinner.style.display = "none";
+    shortenButton.style.display = "initial";
     const link = data.result.short_link;
     copySection.style.display = "flex";
     mainParagraph.innerHTML = url.value;
@@ -44,7 +51,14 @@ let submitForm = async (e, form) => {
     // display();
   } catch (error) {
     //Failure
-    alert("Error");
+    // alert("Error");
+    url.style.border = "2px solid red";
+    url.classList.add(".url");
+    errorEmpty.style.display = "initial";
+    window.setTimeout(function () {
+      url.style.border = "none";
+      errorEmpty.style.display = "none";
+    }, 3000);
   }
 };
 

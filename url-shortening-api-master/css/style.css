@@ -149,6 +149,25 @@ input[type="url"] {
   outline: none;
 }
 
+.url::-webkit-input-placeholder {
+  color: red;
+}
+
+#error {
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  top: 53px;
+  left: 38px;
+  display: none;
+}
+
+#spinner {
+  display: none;
+  padding: 8px 6px;
+  color: white;
+}
+
 input[type="submit"] {
   padding: 8px 20px;
   border-radius: 5px;
@@ -417,6 +436,14 @@ footer img {
   input[type="url"] {
     width: 80%;
     margin-bottom: 10px;
+  }
+
+  #error {
+    top: 48px;
+  }
+
+  .load {
+    display: none;
   }
 
   input[type="submit"] {
