@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frontend Mentor - Shortly URL shortening API Challenge
 
 ![Design preview for the Shortly URL shortening API coding challenge](./design/desktop-preview.jpg)
@@ -94,3 +95,7 @@ We love receiving feedback! We're always looking to improve our challenges and o
 This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
 **Have fun building!** 🚀
+=======
+# Shortly
+live link: https://shortly-frontendmentor.netlify.app/
+>>>>>>> c9963da070380d95e191a6b269e511e31bc15847
